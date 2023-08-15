@@ -1,0 +1,82 @@
+.logo-ufgdnet-publico {
+    border: 0 none;
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+    text-align: left;
+    width: 240px;
+    background-image: url(https://ufgdnet.ufgd.edu.br/imagens/logo_publico_ufgdnet.png);
+    background-repeat: no-repeat;
+    height: 50px;
+}
+
+.tit {
+    font-family: Arial;
+    color: #437f46;
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 24.5px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+h3 {
+    font-size: 24.5px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+folha de estilo do user agent h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.bold-text {
+    font-weight: bold;
+    color: green;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}

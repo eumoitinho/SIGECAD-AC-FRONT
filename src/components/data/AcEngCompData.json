@@ -1,0 +1,160 @@
+{
+    "grupos": {
+      "Grupo I: Atividades de Ensino": {
+        "D1": {
+          "codigo": "D1",
+          "atividade": "Participação no Programa de Monitoria Acadêmica da Pró-Reitoria de Graduação da UFGD, sendo obrigatória apresentação de Certificado de Monitoria expedido por essa Pró-Reitoria.",
+          "pontuacao": 1
+        },
+        "D2": {
+          "codigo": "D2",
+          "atividade": "Participação ativa como colaborador ou bolsista em projetos de ensino oferecidos pela UFGD ou em outras Instituições de Ensino Superior, sendo obrigatória a apresentação de comprovante de inclua a avaliação de frequência e desempenho.",
+          "pontuacao": 1
+        },
+        "D3": {
+          "codigo": "D3",
+          "atividade": "Atuação como instrutor em palestras técnicas, seminários ou cursos da área específica, sendo obrigatória apresentação de certificado comprobatório.",
+          "pontuacao": 0.5
+        },
+        "D4": {
+          "codigo": "D4",
+          "atividade": "Atividades desenvolvidas como bolsista PET (Programa Especial de Treinamento) no âmbito da UFGD, sendo obrigatória apresentação de atestado emitido pela Coordenação do programa PET.",
+          "pontuacao": 1
+        }
+      },
+      "Grupo II: Atividades de Iniciação à Pesquisa": {
+        "P1": {
+          "codigo": "P1",
+          "atividade": "Iniciação científica relacionada com os objetivos do curso, realizada no âmbito da UFGD, mediante a apresentação de certificado emitido pela Pró-Reitoria de Pesquisa.",
+          "pontuacao": 1
+        },
+        "P2": {
+          "codigo": "P2",
+          "atividade": "Participação em projetos de pesquisa desenvolvidos pela UFGD ou em outras Instituições de Ensino Superior, mediante apresentação de relatório de desempenho do acadêmico, assinado pelo professor orientador, e com parecer favorável da Comissão de Apoio Pedagógico do Curso.",
+          "pontuacao": 1
+        },
+        "P3": {
+          "codigo": "P3",
+          "atividade": "Participação em cursos extraordinários da sua área de formação, de fundamento científico, ofertados por Instituições de Ensino Superior ou entidades de classe, comprovada por meio do certificado de participação que deve conter, obrigatoriamente, o nome do curso, o nome do participante, a data em que foi realizado e a assinatura do responsável pelo curso.",
+          "pontuacao": 0.25
+        },
+        "P4": {
+          "codigo": "P4",
+          "atividade": "Participação em palestras, congressos e seminários técnico-científicos relacionados com os objetivos do curso, comprovada por meio do certificado de participação que deve conter, obrigatoriamente, o nome do evento, o nome do participante, o local, a data em que foi realizado e a assinatura do responsável pelo evento.",
+          "pontuacao": 0.25
+        },
+        "P5": {
+          "codigo": "P5",
+          "atividade": "Apresentação de trabalho em eventos técnico-científicos, comprovada por meio de cópia do trabalho publicado e de documento que comprove sua apresentação no evento.",
+          "pontuacao": 0.50
+        }
+      },
+      "Grupo III: Atividades de Extensão": {
+        "E1": {
+          "codigo": "E1",
+          "atividade": "Participação em semanas acadêmicas, jornadas, encontros, conferências, seminários, debates, programas de treinamento, maratonas de programação, conferências, fóruns, atividades artísticas e outros eventos promovidos pela UFGD ou por outras instituições de ensino superior, bem como entidades de classe, instituições certificadoras ou fundações, sendo obrigatória a apresentação de certificado de presença e frequência.",
+          "pontuacao": 0.50 
+        },
+        "E2": {
+          "codigo": "E2",
+          "atividade": "Participação em projetos de extensão oferecidos pela UFGD, em outras Instituições de Ensino Superior ou em órgão público, mediante a apresentação de certificado emitido pela respectiva Pró-Reitoria de Extensão ou órgão público.",
+          "pontuacao": 0.50
+        },
+        "E3": {
+          "codigo": "E3",
+          "atividade": "Participação em atividades relacionadas a divulgação e eventos do Curso e/ou do Vestibular da UFGD, sendo obrigatória apresentação de certificado comprobatório.",
+          "pontuacao": 0.50
+        },
+        "E4": {
+          "codigo": "E4",
+          "atividade": "Participação como agente passivo em cursos e demais atividades de extensão universitária, excluídas as atividades de prestação de serviços que envolvam remuneração, sendo obrigatória apresentação de certificado comprobatório.",
+          "pontuacao": 0.25
+        },
+        "E5": {
+          "codigo": "E5",
+          "atividade": "Participação ativa como bolsista ou colaborador em projetos de extensão (ou assemelhados), sendo obrigatória a apresentação de comprovante que inclua a avaliação de frequência e desempenho.",
+          "pontuacao": 1
+        }
+      },
+      "Grupo IV: Produção Técnica ou Científica": {
+        "TC1": {
+          "codigo": "TC1",
+          "atividade": "Publicação em revistas técnicas, comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 1
+        },
+        "TC2": {
+          "codigo": "TC2",
+          "atividade": "Publicação de trabalho completo em anais de eventos técnico-científicos de abrangência local ou regional, comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 0.5
+        },
+        "TC3": {
+          "codigo": "TC3",
+          "atividade": "Publicação de trabalho completo em anais de eventos técnico-científicos de abrangência nacional, comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 1
+        },
+        "TC4": {
+          "codigo": "TC4",
+          "atividade": "Publicação de trabalho completo em anais de eventos técnico-científicos internacional, comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 2
+        },
+        "TC5": {
+          "codigo": "TC5",
+          "atividade": "Publicação de trabalho completo em periódicos científicos de abrangência local ou regional comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 1
+        },
+        "TC6": {
+          "codigo": "TC6",
+          "atividade": "Publicação de trabalho completo em periódicos científicos de abrangência nacional, comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 2
+        },
+        "TC7": {
+          "codigo": "TC7",
+          "atividade": "Publicação de trabalho completo em periódicos científicos de abrangência internacional, comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 4
+        },
+        "TC8": {
+          "codigo": "TC8",
+          "atividade": "Publicação de trabalho resumido ou pôster em eventos técnico-científicos, comprovada por meio de cópia do trabalho publicado e de documento que comprove o seu aceite para a publicação.",
+          "pontuacao": 5
+        }
+      },
+      "Grupo V: Outras Atividades Práticas": {
+        "O1": {
+          "codigo": "O1",
+          "atividade": "Curso de língua inglesa realizado em estabelecimento de ensino reconhecido, mediante apresentação de certificado de conclusão de pelo menos 1 (um) módulo.",
+          "pontuacao": 0.25
+        },
+        "O2": {
+          "codigo": "O2",
+          "atividade": "Aprovação em exames de língua estrangeira certificados por instituições (TOELF, Michigan etc.).",
+          "pontuacao": 0.50
+        },
+        "O3": {
+          "codigo": "O3",
+          "atividade": "Consultoria na área de computação ou informática, desde que esta seja acompanhada por professores do curso.",
+          "pontuacao": 1
+        },
+        "O4": {
+          "codigo": "O4",
+          "atividade": "Participação em Empresa Júnior, Hotel Tecnológico, Incubadora Tecnológica, mediante apresentação de documento comprobatório com o nome do estudante, o local, a data (de início e fim) em que foi realizada a participação e a assinatura do responsável.",
+          "pontuacao": 1
+        },
+        "O5": {
+          "codigo": "O5",
+          "atividade": "Representação estudante junto aos órgãos da UFGD, mediante comprovação de, no mínimo, 75% de participação efetiva. Computa-se 1 hora semanal pela participação, mediante apresentação de documento emitido pelo órgão competente, que deve conter, obrigatoriamente, o nome do aluno, a representação da qual participa, a data de nomeação e a assinatura do responsável.",
+          "pontuacao": 1
+        },
+        "O6": {
+          "codigo": "O6",
+          "atividade": "Participação em visitas técnicas organizadas pelo Curso, sendo obrigatória a apresentação de certificado de presença e frequência.",
+          "pontuacao": 1
+        },
+        "O7": {
+          "codigo": "O7",
+          "atividade": "Certificação em produtos e/ou tecnologias em Computação, mediante apresentação de documentos comprobatórios.",
+          "pontuacao": 1
+        }
+      }
+    }
+  }
+  

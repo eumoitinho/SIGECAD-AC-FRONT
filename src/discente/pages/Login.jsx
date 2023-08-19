@@ -16,19 +16,25 @@ function Login() {
     const onSubmit = async (event) => {
         event.preventDefault();
         try {
-        const alunoData = await getAluno(loginform.values.cpf);
-            
-        if (alunoData && alunoData.password === loginform.values.password) {
-            // Autenticação bem-sucedida
-            const dataPutInLocalStorage = {
-                cpf: alunoData.cpf,
-                nome: alunoData.nome
-            };
-            localStorage.setItem('user',JSON.stringify(dataPutInLocalStorage));
-            navigate("/");
-        } 
+            const alunoData = await getAluno(loginform.values.cpf);
+            console.log(alunoData);
+            if (alunoData && alunoData.password === loginform.values.password) {
+                // Verifica se o aluno está matriculado na matéria com ID 1
+                if (alunoData.materiaMatricula && alunoData.materiaMatricula.id === 1) {
+                    // Autenticação bem-sucedida
+                    const dataPutInLocalStorage = {
+                        cpf: alunoData.cpf,
+                        nome: alunoData.nome
+                    };
+                    localStorage.setItem('user', JSON.stringify(dataPutInLocalStorage));
+                    navigate("/");
+                } else {
+                    console.log("Aluno não está matriculado na matéria de atividades complementares.");
+                    alert("Você não está matriculado na matéria de atividades complementares.");
+                }
+            }
         } catch (error) {
-         console.log(error);
+            console.log(error);
         }
     };
 

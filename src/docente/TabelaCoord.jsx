@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Badge, Group, Table, Button } from '@mantine/core'; // Importe o componente Button
 import { Container } from '../components/Styles';
 
-export const TabelaCoord = ({ alunos, openCertificadoModal }) => {
-
+export const TabelaCoord = ({ alunos, openCorrectionArea }) => {
 
 
   const getAlunosRow = alunos.map(aluno => (
@@ -20,7 +19,7 @@ export const TabelaCoord = ({ alunos, openCertificadoModal }) => {
           size="xs"
           compact uppercase // Chama o handler de deleção
             color="blue"
-            onClick={() => openCertificadoModal(aluno)}
+            onClick={() => openCorrectionArea(aluno)}
           >
             Ver Certificados
           </Button>

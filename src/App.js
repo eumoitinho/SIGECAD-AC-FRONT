@@ -6,6 +6,7 @@ import LoginCoord from './docente/LoginCoord';
 import Home from './discente/pages/Home';
 import HomeCoord from './docente/HomeCoord';
 import Login from './discente/pages/Login';
+import CorrectionArea from './docente/CorrectionArea';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/homecoord' element= {<ProtectedRoute><HomeCoord/></ProtectedRoute>} />
           <Route path='/Login' element={<PublicRoute><Login /></PublicRoute>} />
           <Route path='/LoginCoord' element={<PublicRoute><LoginCoord /></PublicRoute>} />
+          <Route path='/CorrectionArea/:cpf' element={<ProtectedRoute><CorrectionArea /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </div>

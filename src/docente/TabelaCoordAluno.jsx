@@ -2,32 +2,32 @@ import React, { useEffect, useState } from 'react';
 import { Badge, Group, Table, Button, Container } from '@mantine/core'; // Importe o componente Button
 import { deleteCertificados } from '../components/data/fetchApiData';
 
-export const Tabela = ({ certificados, getData }) => {
+export const Tabela = ({ certificados, handleOpenModal }) => {
 
   const user = JSON.parse(localStorage.getItem('user'));
 
-  const handleDeleteCertificado = async (id) => {
-    // Chama a função para deletar o certificado
-    await deleteCertificados(id, user.cpf);
-    getData();
+  const getBadgeStatus = (statusAprovado) => {
+    if (statusAprovado === null) {
+      return <Badge color="blue" variant="light" radius="xs" size="xs" style={{ marginLeft: 4 }}>Enviado</Badge>;
+    } else if (statusAprovado) {
+      return <Badge color="green" variant="light" radius="xs" size="xs" style={{ marginLeft: 4 }}>Aceito</Badge>;
+    } else {
+      return <Badge color="red" variant="light" radius="xs" size="xs" style={{ marginLeft: 4 }}>Rejeitado</Badge>;
+    }
   };
-
+  
   const getCertificadosRow = certificados.map(certificado => (
     <tr key={certificado.id}>
       <td>{certificado.codigo}</td>
       <td style={{ fontSize: 10 }}>{certificado.atividade}</td>
       <td>{certificado.pontuacao}</td>
-      <td>
-        <Badge color="blue" variant="light" radius='xs' size="xs" style={{ marginLeft: 4 }}>
-          Enviado
-        </Badge>
-      </td>
+      <td>{getBadgeStatus(certificado.statusAprovado)}</td>
       <td>
         <Group position="right">
           <Button
           size="xs"
           compact uppercase
-            onClick={() => handleDeleteCertificado(certificado.id)} // Chama o handler de deleção
+            onClick={() => handleOpenModal(certificado)} // Chama o handler de deleção
             color="yellow"
           >
             Corrigir

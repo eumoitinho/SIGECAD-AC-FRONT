@@ -17,6 +17,7 @@ function Home() {
     try {
       const data = await getCertificados(user.cpf);
       setCertificados(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }

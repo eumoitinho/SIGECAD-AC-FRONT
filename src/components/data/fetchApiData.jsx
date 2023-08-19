@@ -59,6 +59,25 @@ export const sendCertificados = async (certificadoFormData, cpf) => {
   }
 };
 
+export const sendCorrection = async (dataCorrection) => {
+  try {
+    const response = await fetch(`http://localhost:8080/corrigir`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dataCorrection),
+    });
+
+    const data = await response.json();
+    return {
+      success: response.ok,
+    };
+  } catch (error) {
+    console.log(error);
+    return { success: false };
+  }
+};
 
 export const sendPdfCertificados = async (file, codigo) => {
   try {

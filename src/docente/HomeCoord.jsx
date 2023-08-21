@@ -1,24 +1,26 @@
+// Importa os componentes necessários do Mantine e outras bibliotecas
 import React, { useEffect, useState } from 'react';
 import { Box, Card, Modal } from '@mantine/core';
-import Header from '../components/Header';
-import { getAlunoFromCurso, getCertificados } from '../components/data/fetchApiData';
-import TabelaCoord from './TabelaCoord';
-import CorrectionArea from './CorrectionArea';
-import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header'; // Importa o componente Header
+import { getAlunoFromCurso, getCertificados } from '../components/data/fetchApiData'; // Importa as funções de chamada da API
+import TabelaCoord from './TabelaCoord'; // Importa o componente TabelaCoord para exibir a tabela de alunos
+import CorrectionArea from './CorrectionArea'; // Importa o componente CorrectionArea para a correção de alunos
+import { useNavigate } from 'react-router-dom'; // Importa o hook useNavigate para navegar para outras páginas
 
+// Componente HomeCoord para a área do coordenador
 function HomeCoord() {
-  const [alunos, setAlunos] = useState([]);
-  const [selectedAluno, setSelectedAluno] = useState(null);
- // Novo estado para os certificados
-  const user = JSON.parse(localStorage.getItem('user'));
-  const navigate = useNavigate();
+  const [alunos, setAlunos] = useState([]); // Estado para armazenar os alunos matriculados
+  const [selectedAluno, setSelectedAluno] = useState(null); // Estado para armazenar o aluno selecionado
+  const user = JSON.parse(localStorage.getItem('user')); // Obtém os dados do usuário do localStorage
+  const navigate = useNavigate(); // Obtém a função navigate para navegação
   console.log(selectedAluno);
 
+  // Função para obter os alunos matriculados
   const getData = async () => {
     try {
-      const data = await getAlunoFromCurso(user.cpf, user.codcurso);
-      const alunosMatriculados = data.filter(aluno => aluno.materiaMatricula && aluno.materiaMatricula.id === 1);
-      setAlunos(alunosMatriculados);
+      const data = await getAlunoFromCurso(user.cpf, user.codcurso); // Chama a função para obter os alunos
+      const alunosMatriculados = data.filter(aluno => aluno.materiaMatricula && aluno.materiaMatricula.id === 1); // Filtra apenas os alunos matriculados na matéria de atividades complementares
+      setAlunos(alunosMatriculados); // Atualiza o estado com os alunos matriculados
     } catch (error) {
       console.log(error);
     }
@@ -28,10 +30,11 @@ function HomeCoord() {
     getData();
   }, []);
 
+  // Função para abrir a área de correção para um aluno específico
   const openCorrectionArea = async (aluno) => {
-    setSelectedAluno(aluno);
+    setSelectedAluno(aluno); // Atualiza o estado com o aluno selecionado
     try {
-      navigate(`/CorrectionArea/${aluno.cpf}`);
+      navigate(`/CorrectionArea/${aluno.cpf}`); // Navega para a área de correção para o aluno específico
     } catch (error) {
       console.log(error);
     }
@@ -39,15 +42,15 @@ function HomeCoord() {
 
   return (
     <Box>
-      <Header/>
+      <Header /> {/* Renderiza o cabeçalho */}
       <Card>
         <TabelaCoord
           alunos={alunos}
-          openCorrectionArea={openCorrectionArea}
+          openCorrectionArea={openCorrectionArea} // Passa a função de abertura da área de correção para o componente TabelaCoord
         />
       </Card>
     </Box>
   );
 }
 
-export default HomeCoord;
+export default HomeCoord; // Exporta o componente HomeCoord como padrão

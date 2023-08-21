@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { Badge, Group, Table, Button } from '@mantine/core'; // Importe o componente Button
-import { Container } from '../components/Styles';
+// Importa os componentes necessários do Mantine e outros recursos
+import React from 'react';
+import { Badge, Group, Table, Button } from '@mantine/core'; // Importa o componente Button
+import { Container } from '../components/Styles'; // Importa o componente Container
 
+// Componente TabelaCoord para exibir os detalhes dos alunos
 export const TabelaCoord = ({ alunos, openCorrectionArea }) => {
-
-
+  // Mapeia os alunos para as linhas da tabela
   const getAlunosRow = alunos.map(aluno => (
     <tr key={aluno.cpf}>
       <td>{aluno.nome}</td>
-      <td >{aluno.cpf}</td>
+      <td>{aluno.cpf}</td>
       <td>{aluno.email}</td>
-      <td>
-      {aluno.curso.nome}
-      </td>
+      <td>{aluno.curso.nome}</td>
       <td>
         <Group position="center">
           <Button
-          size="xs"
-          compact uppercase // Chama o handler de deleção
+            size="xs"
+            compact
+            uppercase
             color="blue"
-            onClick={() => openCorrectionArea(aluno)}
+            onClick={() => openCorrectionArea(aluno)} // Chama o handler para abrir a área de correção
           >
             Ver Certificados
           </Button>
@@ -42,7 +42,7 @@ export const TabelaCoord = ({ alunos, openCorrectionArea }) => {
             </tr>
           </thead>
           <tbody>
-            {getAlunosRow}
+            {getAlunosRow} {/* Renderiza as linhas de alunos */}
           </tbody>
         </Table>
       </Container>
@@ -50,4 +50,4 @@ export const TabelaCoord = ({ alunos, openCorrectionArea }) => {
   );
 };
 
-export default TabelaCoord;
+export default TabelaCoord; // Exporta o componente TabelaCoord como padrão

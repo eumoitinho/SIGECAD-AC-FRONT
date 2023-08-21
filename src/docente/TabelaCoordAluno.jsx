@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Badge, Group, Table, Button, Container } from '@mantine/core'; // Importe o componente Button
-import { deleteCertificados } from '../components/data/fetchApiData';
+// Importa os componentes necessários do Mantine e outros recursos
+import React from 'react';
+import { Badge, Group, Table, Button, Container } from '@mantine/core'; // Importa os componentes necessários
+import { deleteCertificados } from '../components/data/fetchApiData'; // Importa a função deleteCertificados
 
+// Componente Tabela para exibir os detalhes dos certificados
 export const Tabela = ({ certificados, handleOpenModal }) => {
-
+  // Pega os dados do usuário do localStorage
   const user = JSON.parse(localStorage.getItem('user'));
 
+  // Função para determinar o badge de status baseado no statusAprovado
   const getBadgeStatus = (statusAprovado) => {
     if (statusAprovado === null) {
       return <Badge color="blue" variant="light" radius="xs" size="xs" style={{ marginLeft: 4 }}>Enviado</Badge>;
@@ -15,7 +18,8 @@ export const Tabela = ({ certificados, handleOpenModal }) => {
       return <Badge color="red" variant="light" radius="xs" size="xs" style={{ marginLeft: 4 }}>Rejeitado</Badge>;
     }
   };
-  
+
+  // Mapeia os certificados para as linhas da tabela
   const getCertificadosRow = certificados.map(certificado => (
     <tr key={certificado.id}>
       <td>{certificado.codigo}</td>
@@ -25,9 +29,10 @@ export const Tabela = ({ certificados, handleOpenModal }) => {
       <td>
         <Group position="right">
           <Button
-          size="xs"
-          compact uppercase
-            onClick={() => handleOpenModal(certificado)} // Chama o handler de deleção
+            size="xs"
+            compact
+            uppercase
+            onClick={() => handleOpenModal(certificado)} // Chama o handler para abrir o modal de correção
             color="yellow"
           >
             Corrigir
@@ -51,7 +56,7 @@ export const Tabela = ({ certificados, handleOpenModal }) => {
             </tr>
           </thead>
           <tbody>
-            {getCertificadosRow}
+            {getCertificadosRow} {/* Renderiza as linhas de certificados */}
           </tbody>
         </Table>
       </Container>
@@ -59,4 +64,4 @@ export const Tabela = ({ certificados, handleOpenModal }) => {
   );
 };
 
-export default Tabela;
+export default Tabela; // Exporta o componente Tabela como padrão

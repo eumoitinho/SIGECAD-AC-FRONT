@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# SIGECAD - Sistema de Gerenciamento de Atividades Complementares
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O SIGECAD (Sistema de Gerenciamento de Atividades Complementares) é uma aplicação web desenvolvida com o uso da biblioteca React. O objetivo principal do SIGECAD é facilitar o gerenciamento e correção de atividades complementares de estudantes, bem como fornecer uma plataforma para coordenadores acompanharem e avaliarem essas atividades.
 
-## Available Scripts
+## Como Começar
 
-In the project directory, you can run:
+Este projeto foi criado utilizando o [Create React App](https://github.com/facebook/create-react-app). Aqui estão os principais comandos que você pode executar:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia o aplicativo no modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) no navegador para visualizá-lo.\
+A página será recarregada automaticamente sempre que você fizer alterações.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Compila o aplicativo para produção na pasta `build`.\
+Ele otimiza a compilação para obter o melhor desempenho e está pronto para ser implantado.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Funcionalidades Principais
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O SIGECAD possui as seguintes funcionalidades principais:
 
-### `npm run eject`
+- Autenticação de Alunos e Coordenadores
+- Listagem de Alunos Matriculados em uma Disciplina
+- Exibição de Certificados de Atividades Complementares
+- Correção e Avaliação de Certificados por Coordenadores
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Componentes Principais
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+O projeto é organizado em componentes reutilizáveis que facilitam a manutenção e extensão da aplicação:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `Login.js`: Página de login para alunos e coordenadores.
+- `Home.js`: Página inicial do aluno, exibindo certificados e permitindo adicionar novos.
+- `CorrectionArea.js`: Área de correção para coordenadores, onde podem avaliar certificados.
+- `Tabela.js`: Componente de tabela que exibe os certificados dos alunos.
+- `TabelaCoord.js`: Componente de tabela para coordenadores exibirem alunos matriculados.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Proteção de Rotas
 
-## Learn More
+Para proteger rotas e garantir o acesso apenas a usuários autenticados, foram implementados os seguintes componentes:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `ProtectedRoute.js`: Garante que somente usuários autenticados possam acessar rotas protegidas.
+- `PublicRoute.js`: Garante que somente usuários não autenticados possam acessar rotas públicas.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Aprenda Mais
 
-### Code Splitting
+Para aprender mais sobre a criação de aplicativos React, confira a [documentação do React](https://reactjs.org/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Personalização e Extensão
 
-### Analyzing the Bundle Size
+Este projeto oferece uma base sólida para gerenciamento de atividades complementares. Sinta-se à vontade para personalizar e estender o código conforme necessário para atender às suas necessidades específicas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Problemas e Suporte
 
-### Making a Progressive Web App
+Se você encontrar algum problema ou tiver dúvidas sobre o SIGECAD Atividades Complementares, sinta-se à vontade para entrar em contato com nossa equipe de suporte.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este projeto foi desenvolvido por [João Vitor Moitinho Silva e Igor Zanatta Saraiva](https://github.com/eumoitinho).

@@ -1,16 +1,20 @@
+// Importa o React, useEffect e useState para o gerenciamento de estado
 import React, { useEffect, useState } from 'react';
-import { Badge, Group, Table, Button } from '@mantine/core'; // Importe o componente Button
-import { Container } from './Styles';
-import {deleteCertificados } from './data/fetchApiData'; // Importa as funções de chamada da API
+import { Badge, Group, Table, Button } from '@mantine/core'; // Importa os componentes do Mantine, incluindo Button
+import { Container } from './Styles'; // Importa estilos do componente
+import { deleteCertificados } from './data/fetchApiData'; // Importa a função para deletar certificados da API
 
-export const Tabela = ({ certificados, getData }) => {
-  const user = JSON.parse(localStorage.getItem('user'));
+// Componente Tabela para exibir uma tabela de certificados
+export const Tabela = ({ certificados, getData, aluno }) => {
+  const user = JSON.parse(localStorage.getItem('user')); // Obtém os dados do usuário do localStorage
 
+  // Função para lidar com a exclusão de um certificado
   const handleDeleteCertificado = async (id) => {
-    await deleteCertificados(id, user.cpf);
-    getData();
+    await deleteCertificados(id, user.cpf); // Chama a função para deletar o certificado da API
+    getData(); // Atualiza os dados após a exclusão
   };
 
+  // Função para determinar o status do badge com base no statusAprovado
   const getBadgeStatus = (statusAprovado) => {
     if (statusAprovado === null) {
       return <Badge color="blue" variant="light" radius="xs" size="xs" style={{ marginLeft: 4 }}>Enviado</Badge>;
@@ -21,6 +25,7 @@ export const Tabela = ({ certificados, getData }) => {
     }
   };
 
+  // Gera as linhas da tabela com base nos certificados
   const getCertificadosRow = certificados.map(certificado => (
     <tr key={certificado.id}>
       <td>{certificado.codigo}</td>
@@ -33,20 +38,18 @@ export const Tabela = ({ certificados, getData }) => {
             size="xs"
             compact
             uppercase
-            onClick={() => handleDeleteCertificado(certificado.id)}
+            onClick={() => handleDeleteCertificado(certificado.id)} // Chama a função de exclusão ao clicar no botão
             color="red"
-            disabled={certificado.statusAprovado === true || certificado.statusAprovado === false}
+            disabled={certificado.statusAprovado === true || certificado.statusAprovado === false} // Desativa o botão se o certificado estiver aceito ou rejeitado
           >
             Deletar
           </Button>
         </Group>
       </td>
-      <tfoot>
-      <td>{(certificado.pontuacaoAcumulada)}</td>
-      </tfoot>
     </tr>
   ));
 
+  // Renderiza o componente de tabela
   return (
     <>
       <Container style={{ display: 'flex', padding: '10px' }}>
@@ -61,11 +64,11 @@ export const Tabela = ({ certificados, getData }) => {
             </tr>
           </thead>
           <tbody>
-            {getCertificadosRow}
+            {getCertificadosRow} {/* Renderiza as linhas da tabela geradas pela função */}
           </tbody>
-          <tfoot> {/* Adicione o tfoot para a linha de rodapé da tabela */}
+          <tfoot> {/* Adiciona o rodapé da tabela */}
             <tr>
-              <td colSpan="2">Pontuação Total:</td>
+              <td colSpan="2">Pontuação Total: <Badge color="blue" variant="light" radius="sm" size="md" style={{ marginLeft: 4 }}>{aluno.pontuacaoAcumulada}</Badge></td>
               <td colSpan="2"></td>
             </tr>
           </tfoot>
@@ -75,4 +78,4 @@ export const Tabela = ({ certificados, getData }) => {
   );
 };
 
-export default Tabela;
+export default Tabela; // Exporta o componente Tabela como padrão
